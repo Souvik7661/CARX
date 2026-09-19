@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0d121f;
+  --foreground: #ededed;
+  --neu-base: #101626;
+  --neu-dark: #070a12;
+  --neu-light: #192238;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Lenis Smooth Scrolling Styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* =========================================
+   DARK NEUMORPHISM (SOFT UI) DESIGN TOKENS
+   ========================================= */
+
+/* 1. Neumorphic Extruded Flat/Card */
+.neu-card {
+  background: linear-gradient(145deg, #12192a, #0e1423);
+  box-shadow: 8px 8px 22px #070a13, -8px -8px 22px #182239;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neu-card-sm {
+  background: linear-gradient(145deg, #12192a, #0e1423);
+  box-shadow: 5px 5px 14px #070a13, -5px -5px 14px #182239;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* 2. Neumorphic Inset / Sunken Well (Inputs, Wells, Tracks) */
+.neu-inset {
+  background: #0a0e1a;
+  box-shadow: inset 4px 4px 10px #05070d, inset -4px -4px 10px #151d31;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.neu-inset-subtle {
+  background: #0b0f1c;
+  box-shadow: inset 2px 2px 6px #060910, inset -2px -2px 6px #161e33;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* 3. Neumorphic Tactile Push-Button */
+.neu-btn {
+  background: linear-gradient(145deg, #141c2e, #0f1525);
+  box-shadow: 4px 4px 12px #070a12, -4px -4px 12px #1a243c;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn:hover {
+  background: linear-gradient(145deg, #172136, #111829);
+  box-shadow: 6px 6px 16px #070a12, -6px -6px 16px #1e2a46;
+  transform: translateY(-1px);
+}
+
+.neu-btn:active {
+  background: #0b0f1b;
+  box-shadow: inset 3px 3px 8px #06080f, inset -3px -3px 8px #151d32;
+  transform: translateY(1px);
+}
+
+/* 4. Neumorphic Primary Glowing Button */
+.neu-btn-primary {
+  background: linear-gradient(135deg, #06b6d4, #2563eb);
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.35), 4px 4px 12px #070a12, -4px -4px 12px #182239;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn-primary:hover {
+  box-shadow: 0 6px 25px rgba(6, 182, 212, 0.5), 6px 6px 16px #070a12, -6px -6px 16px #1c2640;
+  transform: translateY(-1px) scale(1.01);
+}
+
+.neu-btn-primary:active {
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.4), 0 2px 10px rgba(6, 182, 212, 0.25);
+  transform: translateY(1px) scale(0.99);
+}
+
+/* 5. Neumorphic Circular Housing */
+.neu-circle {
+  border-radius: 9999px;
+  background: linear-gradient(145deg, #131b2e, #0e1423);
+  box-shadow: 6px 6px 16px #070a12, -6px -6px 16px #19233b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.neu-circle-inset {
+  border-radius: 9999px;
+  background: #0a0e1a;
+  box-shadow: inset 5px 5px 12px #05070e, inset -5px -5px 12px #141c30;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* 6. Neumorphic Pill Badge */
+.neu-pill {
+  border-radius: 9999px;
+  background: linear-gradient(145deg, #121828, #0e1322);
+  box-shadow: 3px 3px 8px #070a12, -3px -3px 8px #172138;
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
