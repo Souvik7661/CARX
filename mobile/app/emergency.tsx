@@ -22,17 +22,20 @@ import {
   Disc,
   Share2,
 } from "lucide-react-native";
+import { triggerHaptic } from "../src/services/haptics";
 
 export default function EmergencyScreen() {
   const router = useRouter();
 
-  const handleDial112 = () => {
+  const handleDial112 = async () => {
+    await triggerHaptic("warning");
     Linking.openURL("tel:112").catch(() => {
       Alert.alert("Emergency Call", "Dialing national emergency services: 112");
     });
   };
 
-  const handleDispatchRSA = (type: string) => {
+  const handleDispatchRSA = async (type: string) => {
+    await triggerHaptic("medium");
     Alert.alert(
       "Roadside Assistance Dispatched",
       `Your request for ${type} has been dispatched. Closest patrol vehicle ETA is 14 minutes. GPS coordinates shared.`

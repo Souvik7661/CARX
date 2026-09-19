@@ -1,251 +1,164 @@
-# Drive Sense — AI-Powered Vehicle Intelligence Platform
+# DriveSense — Full-Stack Automotive Intelligence Platform
 
-> **"Know the car. Know the risk. Know the price."**
-> 
-> *Do not build another car marketplace. Build the intelligence and trust layer around a vehicle purchase.*
+<div align="center">
 
----
+![DriveSense Mobile App](https://img.shields.io/badge/Platform-iOS%20%7C%20Android%20%7C%20Web-06b6d4?style=for-the-badge&logo=react)
+![Expo SDK](https://img.shields.io/badge/Expo-SDK%2052-black?style=for-the-badge&logo=expo)
+![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js)
+![Vercel Ready](https://img.shields.io/badge/Vercel-1--Click%20Deploy-000000?style=for-the-badge&logo=vercel)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-## 1. Project Overview & Product Vision
+### [⬇️ Download DriveSense Mobile App (ZIP)](https://github.com/Souvik7661/CARX/raw/main/public/downloads/drivesense-mobile-app.zip) &nbsp;•&nbsp; [🚀 Deploy to Vercel](https://vercel.com/new/import?framework=nextjs&s=https%3A%2F%2Fgithub.com%2FSouvik7661%2FCARX)
 
-**Drive Sense** is an enterprise-grade vehicle intelligence and decision-support platform designed to assist pre-owned car buyers, inspectors, and dealerships in evaluating vehicles before committing capital.
+*"Every Journey Tells a Story. Let's Keep It Alive."*
 
-Instead of listing cars for sale, Drive Sense answers the buyer's most critical questions:
-1. **Is this vehicle trustworthy?** (Calculated via a transparent **0–100 Vehicle Trust Score**)
-2. **Does the car have hidden damage or undisclosed repairs?** (Multi-angle Computer Vision panel detection)
-3. **Has the odometer been rolled back or tampered with?** (Chronological mileage regression analysis)
-4. **Is the service history consistent?** (Invoice OCR with gap and frequency anomaly detection)
-5. **What is the fair market value?** (Actuarial depreciation models adjusted for mileage and defects)
-6. **What looming repairs will require capital soon?** (Predictive wear-and-tear models)
-7. **What is the 5-year Total Cost of Ownership (TCO)?** (Fuel, insurance, tyres, maintenance, depreciation)
-8. **Final Decision:** **🟢 BUY**, **🟡 NEGOTIATE**, or **🔴 AVOID** with mathematical justification.
+</div>
 
 ---
 
-## 2. System Architecture
+## 📱 1. DriveSense Mobile App (iOS & Android)
 
-```
-                                  +---------------------------------------+
-                                  |     CARX Next.js 16 Web Frontend      |
-                                  |  (TypeScript, Tailwind CSS, Lucide)   |
-                                  +-------------------+-------------------+
-                                                      |
-                                             REST API / JWT Auth
-                                                      |
-                                  +-------------------v-------------------+
-                                  |       FastAPI Application Engine      |
-                                  |          (Python 3.14 + ASGI)         |
-                                  +---------+-------------------+---------+
-                                            |                   |
-                     +----------------------+                   +---------------------+
-                     |                                                                |
-         +-----------v------------+                                       +-----------v------------+
-         |     Relational DB      |                                       |   Object Storage / FS  |
-         |  (SQLite / PostgreSQL) |                                       |  (Invoices, Photos)    |
-         +------------------------+                                       +------------------------+
-                     |
-         +-----------v----------------------------------------------------------------+
-         |                       CARX Autonomous Intelligence Layer                   |
-         |                                                                            |
-         |  1. Transparent Trust Scoring Engine (0–100, 7 Weighted Categories)       |
-         |  2. Mileage Consistency & Odometer Rollback Engine                         |
-         |  3. Document Intelligence Pipeline (Asynchronous OCR Extraction)           |
-         |  4. Multi-Angle Computer Vision Damage & Panel Alignment Detector          |
-         |  5. Statistical Valuation & Depreciation Regression Curve                  |
-         |  6. Total Cost of Ownership (3-Year & 5-Year TCO Financial Modeler)        |
-         |  7. Predictive Maintenance Wear-and-Tear Forecaster                       |
-         |  8. Human Certified Inspector & OBD-II Scanner Diagnostic Layer            |
-         +----------------------------------------------------------------------------+
-```
+DriveSense is an automotive application built with **React Native**, **Expo SDK 52**, **Expo Router v4**, and tactile **Dark Neumorphism**, optimized for both **Apple iOS** (iPhone / iPad) and **Google Android**.
+
+### 📦 Direct Download Links
+- **GitHub Direct Download**: **[`drivesense-mobile-app.zip`](https://github.com/Souvik7661/CARX/raw/main/public/downloads/drivesense-mobile-app.zip)**
+- **API Streaming Endpoint**: `GET /api/download-app` (available on your deployed Vercel domain or localhost)
+- **Codebase Directory**: Explore the raw source code in the [`mobile/`](./mobile) directory.
 
 ---
 
-## 3. Technology Stack
+## 🚀 2. The 8 Production Mobile Screens
 
-### Frontend
-- **Framework**: Next.js 16 (App Router, Turbopack)
-- **Language**: TypeScript 5.x
-- **Styling**: Tailwind CSS (Tailwind v4), dark high-precision automotive engineering theme
-- **Icons**: Lucide React
-- **HTTP Client**: Native Fetch with type-safe REST wrapper (`src/lib/api.ts`)
-
-### Backend
-- **Framework**: FastAPI (Asynchronous Python 3.14)
-- **Server**: Uvicorn (ASGI)
-- **ORM**: SQLAlchemy 2.0 (Compatible with SQLite and PostgreSQL)
-- **Data Validation**: Pydantic v2 & Pydantic-Settings
-- **Security**: JWT (`python-jose`) + cryptographic password hashing (`bcrypt`)
-- **Storage**: Sanitized local storage abstraction for documents and photos
+| Screen | Title | Core Features |
+|---|---|---|
+| **1** | **Onboarding & Welcome** | *"Every Journey Tells a Story. Let's Keep It Alive."* Hero car crest vector emblem, value highlights, seamless entry. |
+| **2** | **Mobile Cockpit / Home** | Concentric Neumorphic **92% Health Dial**, 3 stat insets (`28,450 km`, `18.6 km/l`, `Jan 2026`), 6 quick actions. |
+| **3** | **My Car HUD** | 3D technical blueprint vector schematic with CAN-bus sensor nodes and 6 subsystem gauges (Engine, Brakes, Battery, Tires, Transmission, Electrical). |
+| **4** | **12-Angle Visual Inspection** | 4 Zones: 360° Exterior (8 angles), Interior Cockpit, Engine Bay, Underbody. Computer vision defect scan simulation and PDF export. |
+| **5** | **DriveSense AI Assistant** | Automotive diagnostic copilot with prompt chips (*"DTC P0420"*, *"30,000 km service cost"*, *"Battery voltage"*) and simulated voice mic input. |
+| **6** | **Expenses & Fuel Log** | Monthly total `₹ 4,850` (`-8% vs last month`), 6-month tactile bar chart (Sep–Feb), and 4-category cost breakdown. |
+| **7** | **Track Drive Telemetry** | High-precision digital trip timer (`00:42:18`), GPS polyline route map, live speed, distance, fuel used, and economy. |
+| **8** | **Emergency Mode (SOS)** | Pulsing red SOS button with dual glow rings, one-touch national emergency dialer (`112`), 24x7 Roadside Assistance dispatch with ETA. |
 
 ---
 
-## 4. Database Architecture (18 Relational Models)
+## ⚡ 3. iOS & Android Optimizations
 
-The system uses a normalized relational architecture implemented in `backend/app/models/entities.py`:
+The mobile application has been tailored with platform-specific optimizations for both operating systems:
 
-| Model | Purpose | Key Attributes |
-| :--- | :--- | :--- |
-| `User` | Role-based authorization | `id`, `email`, `role` (CONSUMER, INSPECTOR, DEALER, ADMIN) |
-| `Vehicle` | Central vehicle entity | `vin`, `reg_no`, `make`, `model`, `year`, `mileage`, `asking_price` |
-| `VehicleImage` | Multi-angle inspection photos | `angle`, `image_url`, `detected_damages_json` |
-| `Document` | Uploaded provenance files | `doc_type` (RC, INSURANCE, INVOICE), `file_path`, `confidence` |
-| `DocumentExtraction` | Extracted telemetry fields | `extracted_data_json`, `is_verified`, `verified_by` |
-| `ServiceRecord` | Chronological maintenance log | `date`, `odometer`, `service_type`, `total_cost`, `is_flagged` |
-| `Inspection` | Certified physical & OBD scan | `obd_codes_json`, `battery_voltage`, `coolant_temp`, `engine_health` |
-| `InspectionFinding` | Physical checklist items | `category`, `item_name`, `condition`, `estimated_repair_cost` |
-| `DamageFinding` | Visual panel defects | `panel`, `damage_type`, `severity` (LOW, MED, HIGH), `confidence` |
-| `RiskScore` | Transparent 0–100 score | `overall_score`, `confidence_score`, category scores, `positive_factors`, `risk_factors` |
-| `Valuation` | Fair market evaluation | `estimated_fair_min`, `estimated_fair_max`, `price_difference`, `recommendation` |
-| `OwnershipCostModel` | 3-yr / 5-yr TCO breakdown | `fuel_cost`, `insurance_cost`, `maintenance_cost`, `tyres_cost`, `depreciation` |
-| `Report` | Cryptographic public reports | `report_code`, `summary_json`, `is_verified` |
-| `AIProcessingJob` | Asynchronous processing queue | `job_type`, `status` (QUEUED, PROCESSING, COMPLETED), `progress` |
-| `AuditLog` | Security & data audit log | `user_id`, `action`, `entity_type`, `details_json` |
-| `DealerInventory` | Dealership portfolio metrics | `days_in_stock`, `inquiry_count`, `purchase_cost`, `target_margin` |
-| `SystemConfig` | Live configurable parameters | `key`, `value_json` (e.g. scoring category weights) |
+### 🍎 iOS (iPhone & iPad)
+- **Taptic Engine Feedback**: Integrated `expo-haptics` with distinct haptic patterns for light UI navigation, medium inspection confirmations, and heavy warning alerts on emergency SOS.
+- **Dynamic Island & Notch Safe Areas**: Dynamic insets via `react-native-safe-area-context` ensuring zero clipping on modern iPhone models (iPhone 12 through 16 Pro Max).
+- **Smooth Retina Neumorphic Shadows**: Multi-layered shadow radius, opacity, and offsets configured specifically for Apple CoreGraphics rendering.
+- **Privacy & Permissions (`infoPlist`)**: Pre-configured permission descriptions for `NSCameraUsageDescription`, `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, and `NSPhotoLibraryUsageDescription`.
+
+### 🤖 Android (Smartphones & Tablets)
+- **Hardware-Accelerated Elevation**: Fine-tuned `elevation` and ambient shadow tokens for Android's Material RenderThread, ensuring soft neumorphic depth on AMOLED and LCD screens.
+- **Android Navigation Bar Integration**: Automatic dark translucent navigation bar (`androidNavigationBar: { barStyle: "light-content", backgroundColor: "#090d16" }`).
+- **Software Keyboard Management**: Configured `softwareKeyboardLayoutMode: "pan"` in `app.json` preventing keyboard overlapping on chat and expense forms.
+- **Vibration Fallback & Permissions**: `android.permission.VIBRATE`, `ACCESS_FINE_LOCATION`, and `CAMERA` declared in manifest.
+- **Direct Sideloading APK Support**: Configured EAS Build profile producing a standalone `.apk` installable on any Android device without Google Play Developer console.
 
 ---
 
-## 5. Scoring & Intelligence Methodology
+## 🛠️ 4. Quickstart: Running the Mobile App
 
-### Transparent Vehicle Trust Score (0–100)
-CARX rejects black-box arbitrary AI scores. The score is mathematically calculated across 7 configurable categories:
-1. **Documentation** (20% default weight)
-2. **Service History** (15% default weight)
-3. **Mileage Consistency** (15% default weight)
-4. **Visual Condition** (15% default weight)
-5. **Mechanical / Diagnostic Data** (15% default weight)
-6. **Market / Price Risk** (10% default weight)
-7. **Ownership / Usage Profile** (10% default weight)
-
-**Missing Data Normalization**: If evidence for a category is missing (e.g. no OBD scan or photos uploaded yet), CARX dynamically normalizes the score across available categories so the score remains on a fair 0–100 scale, while proportionally adjusting the **Data Confidence %**.
-
-### Computer Vision Damage Analysis
-Evaluates 9 discrete photographic angles: Front, Rear, Left, Right, Interior, Engine Bay, Tyres, Dashboard, and Close-ups.
-- Detects scratches, stone chips, dents, non-OEM paint texture, and tyre wear depth.
-- **Strict Non-Assertive Phrasing**: Reports *"Possible previous paint repair detected"* rather than making speculative accident assertions.
-
-### Mileage Consistency & Rollback Engine
-Parses chronological records to detect:
-- Odometer rollbacks (subsequent reading lower than historical log)
-- High-mileage surges (>300 km/day pace)
-- Verified classification: *"Consistent"*, *"Potential inconsistency"*, *"Unable to verify"*, or *"Strong evidence of consistency"*.
-
----
-
-## 6. The 3 Controlled Demo Archetypes
-
-CARX includes 3 realistic pre-seeded vehicles in the demo sandbox:
-
-| Vehicle | Archetype | Trust Score | Price Disparity | Verdict | Key Finding |
-| :--- | :--- | :---: | :---: | :---: | :--- |
-| **2021 Hyundai Creta 1.5 SX** | Prime Verified | **86 / 100** | Aligned (Asking ₹9.25L vs Fair ₹9.1L–₹9.6L) | **🟢 BUY** | Full dealer service timeline, 0 OBD faults, single owner. |
-| **2019 Jeep Compass Limited** | Overpriced / Gaps | **69 / 100** | +₹1,45,000 above fair market band | **🟡 NEGOTIATE** | Right door paint blend, 16-month service gap, tyre wear. |
-| **2018 BMW 320d Luxury** | Rollback & Structural | **44 / 100** | +₹6,25,000 above risk-adjusted value | **🔴 AVOID** | Declared 54,200 km vs 82,400 km in 2023, apron non-OEM weld, EGR fault code. |
-
----
-
-## 7. API Documentation
-
-### Core Endpoints (`/api`)
-
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| `GET` | `/health` | System health, database connection probe, active jobs |
-| `GET` | `/api/vehicles` | List vehicles (filters: `query`, `is_demo`) |
-| `POST` | `/api/vehicles` | Initialize vehicle workspace with progressive enrichment |
-| `GET` | `/api/vehicles/{id}` | Complete vehicle intelligence dossier |
-| `POST` | `/api/vehicles/{id}/analyze` | Trigger end-to-end multi-modal scoring and valuation |
-| `POST` | `/api/vehicles/{id}/documents` | Asynchronously upload and OCR extract service/RC documents |
-| `PUT` | `/api/documents/{doc_id}/extraction` | Manual review and correction of OCR fields |
-| `POST` | `/api/vehicles/{id}/images` | Upload angle perspective and run computer vision analysis |
-| `GET` | `/api/vehicles/{id}/service-history` | Chronological service timeline with gap and cost anomaly flags |
-| `GET` | `/api/vehicles/{id}/mileage` | Mileage progression, annual pace, and rollback probability |
-| `POST` | `/api/vehicles/{id}/valuation` | Recalculate fair market value against counter-offers |
-| `POST` | `/api/vehicles/{id}/ownership-cost` | Simulate 3-yr / 5-yr TCO with custom fuel and mileage parameters |
-| `GET` | `/api/vehicles/{id}/repairs` | Predictive wear-and-tear component schedule |
-| `POST` | `/api/vehicles/{id}/inspections` | Certified mechanic physical findings & OBD-II scanner logs |
-| `POST` | `/api/vehicles/{id}/report` | Generate verifiable public report with unique report code |
-| `GET` | `/api/reports/{code}` | Retrieve verified report by cryptographic code |
-| `POST` | `/api/compare` | Side-by-side comparison of up to 3 candidate vehicles |
-| `GET` | `/api/dealer/stats` | Real calculated dealership metrics (inventory, aging stock, margin risk) |
-| `GET` | `/api/admin/weights` | Retrieve current scoring category weights |
-| `PUT` | `/api/admin/weights` | Dynamically update category weights in real-time |
-
----
-
-## 8. Local Setup & Quick Start
-
-### Prerequisites
-- Python 3.10+ (Tested on Python 3.14)
-- Node.js 18+ (Tested on Node.js v25.8)
-- npm or pnpm
-
-### 1. Clone & Setup Backend
+### Option A: From Extracted Codebase
 ```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+# 1. Navigate to the mobile directory
+cd mobile
 
-# Seed the database with the 3 realistic archetypes
-python -m app.scripts.seed
-
-# Start the FastAPI API server (defaults to port 8000)
-uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
-```
-
-### 2. Setup Frontend
-```bash
-cd frontend
+# 2. Install dependencies
 npm install
 
-# Build to verify production readiness
-npm run build
-
-# Start the Next.js dev server (defaults to port 3000)
-npm run dev
+# 3. Start Expo development server
+npx expo start
 ```
+- Press **`i`** to open the **iOS Simulator** (macOS).
+- Press **`a`** to open the **Android Emulator**.
+- Or scan the QR code using the **Expo Go** app on your physical iPhone or Android device!
 
-### 3. Access Platform
-- **Landing Page**: [http://localhost:3000](http://localhost:3000)
-- **Demo Archetypes**: [http://localhost:3000/demo](http://localhost:3000/demo)
-- **Side-by-Side Comparison**: [http://localhost:3000/compare](http://localhost:3000/compare)
-- **Dealer Hub**: [http://localhost:3000/dealer](http://localhost:3000/dealer)
-- **Inspector Portal**: [http://localhost:3000/inspector](http://localhost:3000/inspector)
-- **Admin Configuration**: [http://localhost:3000/admin](http://localhost:3000/admin)
-- **FastAPI Interactive Swagger Docs**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
----
-
-## 9. Running Tests
-
-The backend includes a comprehensive unit and integration test suite covering scoring engine edge cases, rollback anomalies, valuation curves, and API endpoints:
+### Option B: Compiling Standalone Binaries (EAS Build)
+The project includes a ready-to-use [`mobile/eas.json`](./mobile/eas.json) configuration:
 
 ```bash
-cd backend
-PYTHONPATH=. venv/bin/pytest -v tests/
-```
+# Build standalone Android APK (direct download & sideload)
+npx eas-cli build -p android --profile preview
 
-Test coverage includes:
-- `test_scoring_engine_empty`: Zero data normalization and confidence degradation.
-- `test_scoring_engine_high_trust`: Multi-evidence synthesis with positive factors.
-- `test_mileage_rollback_detection`: Accurate detection of odometer reversal.
-- `test_mileage_consistent`: Chronological timeline verification.
-- `test_valuation_fair_buy`: Valuation alignment with asking prices.
-- `test_valuation_overpriced_avoid`: Disparity threshold detection.
-- `test_ownership_tco_calculation`: 5-year TCO financial formula.
-- `test_health_check_api`: `GET /health` operational probe.
-- `test_list_demo_vehicles_api`: Demo archetype registry.
-- `test_get_single_vehicle_workspace`: Relational data retrieval.
-- `test_compare_endpoint`: 3-vehicle decision matrix.
-- `test_dealer_stats_endpoint`: Inventory and aging calculations.
-- `test_admin_weights_endpoint`: Dynamic weight configuration.
+# Build standalone iOS IPA (internal testing or simulator)
+npx eas-cli build -p ios --profile preview
+```
 
 ---
 
-## 10. Future Roadmap
+## 🌐 5. Web Platform & Serverless Architecture
 
-1. **Hardware OBD-II Bluetooth Integration**: Direct real-time CAN bus telemetry polling via ELM327 / STN1110 dongles.
-2. **National Registry API Connectors**: Direct integration with government transport registries (e.g. Parivahan VAHAN API) and insurance claims bureaus.
-3. **Advanced LLM Vision Multi-Shot**: Integration of Google Gemini 2.0 Flash / Pro Vision for micro-fracture paint swirl and underbody rust segmentation.
-4. **Mobile Native App**: React Native / Expo companion app for on-site physical vehicle walk-arounds.
+The repository is built as a unified full-stack **Next.js 16 (Turbopack)** application:
+- **Repository Root**: Next.js lives directly at the repository root, allowing instant 1-click Vercel deployment.
+- **Interactive Mobile Simulator**: Built-in phone viewport on `/` with Lenis smooth scrolling and instant view switching (**Desktop Cockpit ↔ Mobile App Simulator**).
+- **Native Serverless API Routes (`src/app/api/`)**:
+  - `GET /api/health` — System health and status
+  - `GET/POST /api/vehicles` & `GET/PUT /api/vehicles/[id]` — Vehicle catalog CRUD
+  - `GET/POST /api/vehicles/[id]/valuation` — Algorithmic valuation engine
+  - `GET/POST /api/vehicles/[id]/ownership-cost` — 5-Year total cost of ownership
+  - `GET/POST /api/vehicles/[id]/score` — Vehicle risk and trust scoring
+  - `GET /api/vehicles/[id]/service-records` — Maintenance timeline
+  - `GET /api/vehicles/[id]/mileage` — Odometer analysis and rollback check
+  - `POST /api/compare` — Multi-vehicle comparison
+  - `GET /api/dealer/stats` — Dealer analytics
+  - `GET/PUT /api/admin/weights` — Admin risk scoring weights
+  - `GET /api/download-app` — Streams the latest mobile app zip archive
+
+---
+
+## 🚀 6. Deploying to Vercel (1-Click)
+
+1. Open [vercel.com/new](https://vercel.com/new).
+2. Select your repository: **`Souvik7661/CARX`**.
+3. Framework Preset: **`Next.js`** (Root Directory: `./`).
+4. Click **Deploy**. Vercel will build and deploy the entire platform globally in ~60 seconds with zero environment variable configuration required!
+
+---
+
+## 📂 7. Repository Structure
+
+```
+CARX/
+├── package.json              # Full-stack Next.js 16 app configuration
+├── next.config.ts            # Next.js configuration
+├── tsconfig.json             # Root TypeScript configuration
+├── vercel.json               # Vercel deployment manifest
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # Master DriveSense Cockpit & Mobile App Switcher
+│   │   ├── layout.tsx        # App layout with Lenis smooth scroll provider
+│   │   ├── globals.css       # Tactile Neumorphism CSS tokens
+│   │   └── api/              # Native Serverless Route Handlers
+│   │       ├── download-app/ # Mobile App ZIP download endpoint
+│   │       ├── health/       # Health check
+│   │       ├── vehicles/     # Vehicle catalog & calculations
+│   │       ├── compare/      # Vehicle comparison
+│   │       └── dealer/       # Dealer stats
+│   ├── components/
+│   │   └── drivesense/       # Neumorphic components & MobileAppSuite simulator
+│   └── lib/
+│       ├── api.ts            # Relative /api fetch client
+│       ├── server-store.ts   # Serverless in-memory data store
+│       └── types.ts          # Core entity definitions
+├── public/
+│   └── downloads/
+│       └── drivesense-mobile-app.zip  # Compiled Mobile App Archive
+├── mobile/                   # Standalone Expo / React Native project
+│   ├── app/                  # Expo Router v4 screens (All 8 screens)
+│   ├── src/                  # Theme, SQLite db.ts, haptics.ts, types
+│   ├── eas.json              # Android APK & iOS IPA build profiles
+│   ├── app.json              # Permissions, icons, and bundle identifiers
+│   └── package.json          # Expo SDK 52 dependencies
+└── python-backend/           # Preserved standalone FastAPI backend
+```
+
+---
+
+## 📜 8. License
+
+This project is licensed under the MIT License.

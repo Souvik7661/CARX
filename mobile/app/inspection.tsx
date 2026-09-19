@@ -23,6 +23,7 @@ import {
 } from "lucide-react-native";
 import { DEFAULT_INSPECTION_ANGLES, detectMockDefects } from "../src/services/inspectionService";
 import { InspectionZone, InspectionAngle } from "../src/types";
+import { triggerHaptic } from "../src/services/haptics";
 
 export default function InspectionScreen() {
   const router = useRouter();
@@ -34,12 +35,14 @@ export default function InspectionScreen() {
   const filteredAngles = angles.filter((a) => a.zone === activeZone);
   const verifiedCount = angles.filter((a) => a.status === "verified").length;
 
-  const handleCapturePhoto = () => {
+  const handleCapturePhoto = async () => {
     if (!selectedAngle) return;
+    await triggerHaptic("medium");
     setIsScanning(true);
 
-    setTimeout(() => {
+    setTimeout(async () => {
       const defect = detectMockDefects(selectedAngle.id);
+      await triggerHaptic(defect.hasDefect ? "warning" : "success");
       setAngles((prev) =>
         prev.map((a) =>
           a.id === selectedAngle.id
