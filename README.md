@@ -1,4 +1,4 @@
-# CARX — AI-Powered Vehicle Intelligence Platform
+# Drive Sense — AI-Powered Vehicle Intelligence Platform
 
 > **"Know the car. Know the risk. Know the price."**
 > 
@@ -8,9 +8,9 @@
 
 ## 1. Project Overview & Product Vision
 
-**CARX** is an enterprise-grade vehicle intelligence and decision-support platform designed to assist pre-owned car buyers, inspectors, and dealerships in evaluating vehicles before committing capital.
+**Drive Sense** is an enterprise-grade vehicle intelligence and decision-support platform designed to assist pre-owned car buyers, inspectors, and dealerships in evaluating vehicles before committing capital.
 
-Instead of listing cars for sale, CARX answers the buyer's most critical questions:
+Instead of listing cars for sale, Drive Sense answers the buyer's most critical questions:
 1. **Is this vehicle trustworthy?** (Calculated via a transparent **0–100 Vehicle Trust Score**)
 2. **Does the car have hidden damage or undisclosed repairs?** (Multi-angle Computer Vision panel detection)
 3. **Has the odometer been rolled back or tampered with?** (Chronological mileage regression analysis)
