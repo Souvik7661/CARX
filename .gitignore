@@ -29,7 +29,10 @@ htmlcov/
 *.sqlite3
 backend/carx.db
 backend/uploads/*
+python-backend/carx.db
+python-backend/uploads/*
 !backend/uploads/.gitkeep
+!python-backend/uploads/.gitkeep
 
 # Next.js build & dev outputs
 .next/
