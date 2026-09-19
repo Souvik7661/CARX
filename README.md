@@ -8,10 +8,30 @@
 ![Vercel Ready](https://img.shields.io/badge/Vercel-1--Click%20Deploy-000000?style=for-the-badge&logo=vercel)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-### [⬇️ Download DriveSense Mobile App (ZIP)](https://github.com/Souvik7661/CARX/raw/main/public/downloads/drivesense-mobile-app.zip) &nbsp;•&nbsp; [🚀 Deploy to Vercel](https://vercel.com/new/import?framework=nextjs&s=https%3A%2F%2Fgithub.com%2FSouvik7661%2FCARX)
+### [⬇️ Download DriveSense Mobile App (ZIP)](https://github.com/Souvik7661/CARX/raw/main/public/downloads/drivesense-mobile-app.zip) &nbsp;•&nbsp; [🎬 Watch Walkthrough MP4 Video](https://github.com/Souvik7661/CARX/raw/main/public/drivesense_mobile_walkthrough.mp4) &nbsp;•&nbsp; [🚀 Deploy to Vercel](https://vercel.com/new/import?framework=nextjs&s=https%3A%2F%2Fgithub.com%2FSouvik7661%2FCARX)
 
 *"Every Journey Tells a Story. Let's Keep It Alive."*
 
+</div>
+
+---
+
+## 🎬 Mobile App Live Walkthrough
+
+<div align="center">
+  <img src="./public/drivesense_mobile_walkthrough.webp" width="340" alt="DriveSense Mobile App Walkthrough" />
+  <p><b>Animated Walkthrough: All 8 Screens in Action</b> (Onboarding, Home Cockpit, Blueprint HUD, 360° AI Inspection, AI Assistant, Expenses, Track Drive, and SOS Mode)</p>
+  <p><a href="./public/drivesense_mobile_walkthrough.mp4"><b>▶️ Download High-Definition MP4 Video (H.264)</b></a></p>
+</div>
+
+---
+
+## 📲 Instant Phone Testing via Expo Go
+
+<div align="center">
+  <img src="./public/expo-qr.png" width="200" alt="DriveSense Expo Go QR Code" />
+  <p>Scan with <b>Expo Go</b> on Android or the <b>Camera app</b> on iOS to launch instantly on your device!</p>
+  <p><code>exp://192.168.0.101:8081</code></p>
 </div>
 
 ---

@@ -64,7 +64,8 @@
         {
           "locationWhenInUsePermission": "Allow DriveSense to use your location for real-time drive tracking and SOS emergency dispatch."
         }
-      ]
+      ],
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true

@@ -44,8 +44,11 @@ import { DriveSenseCar, FuelType } from "@/lib/drivesense-types";
 
 interface MobileAppSuiteProps {
   activeCar: DriveSenseCar | null;
-  onAddCar: () => void;
+  onAddCar?: () => void;
   onCloseMobileView?: () => void;
+  initialScreen?: MobileScreen;
+  initialCarTab?: "overview" | "health" | "gallery" | "specs";
+  initialQuickAdd?: boolean;
 }
 
 type MobileScreen =
@@ -63,9 +66,12 @@ export default function MobileAppSuite({
   activeCar,
   onAddCar,
   onCloseMobileView,
+  initialScreen = "home",
+  initialCarTab = "overview",
+  initialQuickAdd = false,
 }: MobileAppSuiteProps) {
-  const [currentScreen, setCurrentScreen] = useState<MobileScreen>("home");
-  const [activeCarTab, setActiveCarTab] = useState<"overview" | "health" | "gallery" | "specs">("overview");
+  const [currentScreen, setCurrentScreen] = useState<MobileScreen>(initialScreen);
+  const [activeCarTab, setActiveCarTab] = useState<"overview" | "health" | "gallery" | "specs">(initialCarTab);
   const [activeInspectionTab, setActiveInspectionTab] = useState<"exterior" | "interior" | "engine" | "underbody">("exterior");
   const [currentAngleIndex, setCurrentAngleIndex] = useState(0);
   const [capturedAngles, setCapturedAngles] = useState<{ [index: number]: string }>({});
@@ -77,7 +83,7 @@ export default function MobileAppSuite({
   const [driveDistance, setDriveDistance] = useState(18.4);
 
   // Quick Add Action Sheet modal
-  const [showQuickAdd, setShowQuickAdd] = useState(false);
+  const [showQuickAdd, setShowQuickAdd] = useState(initialQuickAdd);
 
   // Assistant messages state
   const [chatMessages, setChatMessages] = useState([
@@ -88,6 +94,17 @@ export default function MobileAppSuite({
     },
   ]);
   const [chatInput, setChatInput] = useState("");
+
+  // Sync screen from URL query param if present
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const p = new URLSearchParams(window.location.search);
+      const s = p.get("screen") as MobileScreen;
+      if (s) {
+        setCurrentScreen(s);
+      }
+    }
+  }, []);
 
   // Drive mode timer tick
   useEffect(() => {
@@ -1096,7 +1113,7 @@ export default function MobileAppSuite({
                 { label: "Visual Inspection", icon: Camera, onClick: () => { setShowQuickAdd(false); setCurrentScreen("inspection"); } },
                 { label: "Start Drive Trip", icon: Compass, onClick: () => { setShowQuickAdd(false); setCurrentScreen("drive"); } },
                 { label: "Ask AI Assistant", icon: Bot, onClick: () => { setShowQuickAdd(false); setCurrentScreen("assistant"); } },
-                { label: "Add New Vehicle", icon: Plus, onClick: () => { setShowQuickAdd(false); onAddCar(); } },
+                { label: "Add New Vehicle", icon: Plus, onClick: () => { setShowQuickAdd(false); onAddCar?.(); } },
               ].map((act) => {
                 const Icon = act.icon;
                 return (

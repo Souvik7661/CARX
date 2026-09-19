@@ -114,6 +114,14 @@ export default function DriveSenseDashboardPage() {
     if (hour < 12) setGreeting("Good Morning");
     else if (hour < 17) setGreeting("Good Afternoon");
     else setGreeting("Good Evening");
+
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("view") === "mobile") {
+        setViewMode("mobile");
+        setActiveTab("mobile-suite");
+      }
+    }
   }, []);
 
   const navMenuItems = [
